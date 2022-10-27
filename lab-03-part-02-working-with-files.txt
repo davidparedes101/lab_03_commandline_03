@@ -37,7 +37,7 @@ $ ls
 Copy and paste the output below.
 ----------
 
-
+foo.txt
 
 ==========
 7. Create another new file using touch.
@@ -53,7 +53,8 @@ $ touch bar.txt
 Copy and paste the output below.
 ----------
 
-
+-rw-r--r-- 1 DPare 197609 0 Oct 26 19:28 bar.txt
+-rw-r--r-- 1 DPare 197609 0 Oct 26 19:27 foo.txt
 
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
@@ -62,13 +63,18 @@ Copy and paste the output below.
 Write the command that you used to copy the file.  Additionally, copy and paste the output of your file listing below.
 ----------
 
-
+cp bar.txt baz.txt
+bar.txt   baz.txt   foo.txt
 
 ==========
 10. Delete the file called bar.txt and then list the files again.
 
 Write the command that you used to remove the file.  Copy and paste the output of your file listing below.
 ----------
+
+rm bar.txt
+baz.txt   foo.txt
+
 ==========
 11. Move the file called foo.txt to qux.txt and then list the files again.
 
@@ -76,7 +82,8 @@ Write the command that you used to remove the file.  Copy and paste the output o
 Write the command that you used to move the file.  Copy and paste the output of your file listing below.
 ----------
 
-
+mv foo.txt qux.txt
+baz.txt   qux.txt
 
 ==========
 12. Go up one directory so that you're in ~/mtec-1003-lab-03
@@ -91,7 +98,8 @@ Write the command that you used to move the file.  Copy and paste the output of 
 Write out the command that you used and what happened.
 ----------
 
-
+rmdir my_files
+rmdir: failed to remove 'my_files': Directory not empty
 
 ==========
 14. Try removing the directory called my_files using rm.
@@ -99,7 +107,8 @@ Write out the command that you used and what happened.
 Write out the command that you used and what happened.
 ----------
 
-
+rm my_files
+rm: cannot remove 'my_files': Is a directory
 
 ==========
 15. MAKE SURE YOU'RE IN THE mtec100-lab-03 directory!  
@@ -121,7 +130,7 @@ Use the command called cat on the file to show its contents.
 Describe what happened below.
 ----------
 
-
+It displays the entire text on page 1232.
 
 ==========
 17. That was a lot of text.  Let's find ways to limit it.  Using the same file...
@@ -133,7 +142,8 @@ Use the command, head, on the file to show the contents of the beginning of the 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
 
-
+head books/other/pg1232.txt
+Title: The Prince
 
 ==========
 18. Using the same file again!
@@ -145,7 +155,8 @@ Use tail on the file to show the contents of the end of the file.
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
 
-
+tail books/other/pg1232.txt
+subscribe to our email newsletter to hear about new eBooks.
 
 ==========
 19. Using the same file...
@@ -157,7 +168,7 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
 
-
+Spacebar makes the page go down, q closes the text
 
 ==========
 20. Describe what situations you would use the following commands for viewing files: less, more, cat, tail, head
@@ -165,14 +176,20 @@ Write the command that you used below.  Describe what spacebar and q does after 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
 
-
+Less/More would be good to navigate around the text. Tail would be good to see the last lines of a text. Head would be good to see the start of the text. Cat would be good to see the entire text.
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
 
-
+wc -w books/other/pg1232.txt
+52639 books/other/pg1232.txt
+There are 52,639 words.
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+
+wc -l books/other/pg1232.txt
+5063 books/other/pg1232.txt
+There are 5,063 lines.
